@@ -272,7 +272,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QLCommonMark/cmark",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalmoksha.QLCommonMark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
@@ -290,7 +290,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QLCommonMark/cmark",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalmoksha.QLCommonMark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
