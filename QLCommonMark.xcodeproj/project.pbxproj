@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450C002A1EE405500016877C /* cmark_export.h in Headers */ = {isa = PBXBuildFile; fileRef = 450C00261EE405500016877C /* cmark_export.h */; };
+		450C002B1EE405500016877C /* cmark_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 450C00271EE405500016877C /* cmark_version.h */; };
+		450C002C1EE405500016877C /* cmark.h in Headers */ = {isa = PBXBuildFile; fileRef = 450C00281EE405500016877C /* cmark.h */; };
+		450C002D1EE405500016877C /* libcmark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450C00291EE405500016877C /* libcmark.a */; };
 		453120C21E9E1E1C00D752F5 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 453120C11E9E1E1C00D752F5 /* GenerateThumbnailForURL.m */; };
 		453120C41E9E1E1C00D752F5 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 453120C31E9E1E1C00D752F5 /* GeneratePreviewForURL.m */; };
 		453120C61E9E1E1C00D752F5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 453120C51E9E1E1C00D752F5 /* main.c */; };
 		453120D01E9E1F5700D752F5 /* common_mark.h in Headers */ = {isa = PBXBuildFile; fileRef = 453120CE1E9E1F5700D752F5 /* common_mark.h */; };
 		453120D31E9E1FD600D752F5 /* common_mark.m in Sources */ = {isa = PBXBuildFile; fileRef = 453120D21E9E1FD600D752F5 /* common_mark.m */; };
 		45E7FCBC1E9E4B4800773069 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = 45E7FCBB1E9E4B4800773069 /* themes */; };
-		45E7FCBE1E9E63F400773069 /* cmark-0.27.1 in Resources */ = {isa = PBXBuildFile; fileRef = 45E7FCBD1E9E63F400773069 /* cmark-0.27.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450C00261EE405500016877C /* cmark_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cmark_export.h; path = cmark/cmark_export.h; sourceTree = "<group>"; };
+		450C00271EE405500016877C /* cmark_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cmark_version.h; path = cmark/cmark_version.h; sourceTree = "<group>"; };
+		450C00281EE405500016877C /* cmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cmark.h; path = cmark/cmark.h; sourceTree = "<group>"; };
+		450C00291EE405500016877C /* libcmark.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcmark.a; path = cmark/libcmark.a; sourceTree = "<group>"; };
 		453120BE1E9E1E1C00D752F5 /* QLCommonMark.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLCommonMark.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		453120C11E9E1E1C00D752F5 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		453120C31E9E1E1C00D752F5 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
@@ -26,7 +33,6 @@
 		453120D21E9E1FD600D752F5 /* common_mark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = common_mark.m; sourceTree = "<group>"; };
 		453120D41E9E218A00D752F5 /* shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shared.h; sourceTree = "<group>"; };
 		45E7FCBB1E9E4B4800773069 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = themes; path = QLCommonMark/Resources/themes; sourceTree = "<group>"; };
-		45E7FCBD1E9E63F400773069 /* cmark-0.27.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; name = "cmark-0.27.1"; path = "QLCommonMark/Resources/cmark-0.27.1"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,12 +40,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450C002D1EE405500016877C /* libcmark.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		450C00251EE4023B0016877C /* cmark */ = {
+			isa = PBXGroup;
+			children = (
+				450C00261EE405500016877C /* cmark_export.h */,
+				450C00271EE405500016877C /* cmark_version.h */,
+				450C00281EE405500016877C /* cmark.h */,
+				450C00291EE405500016877C /* libcmark.a */,
+			);
+			name = cmark;
+			sourceTree = "<group>";
+		};
 		453120B41E9E1E1C00D752F5 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +78,7 @@
 		453120C01E9E1E1C00D752F5 /* QLCommonMark */ = {
 			isa = PBXGroup;
 			children = (
+				450C00251EE4023B0016877C /* cmark */,
 				453120CE1E9E1F5700D752F5 /* common_mark.h */,
 				453120D21E9E1FD600D752F5 /* common_mark.m */,
 				453120C11E9E1E1C00D752F5 /* GenerateThumbnailForURL.m */,
@@ -74,7 +93,6 @@
 		453120CD1E9E1F2100D752F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				45E7FCBD1E9E63F400773069 /* cmark-0.27.1 */,
 				45E7FCBB1E9E4B4800773069 /* themes */,
 			);
 			name = Resources;
@@ -88,6 +106,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				453120D01E9E1F5700D752F5 /* common_mark.h in Headers */,
+				450C002A1EE405500016877C /* cmark_export.h in Headers */,
+				450C002B1EE405500016877C /* cmark_version.h in Headers */,
+				450C002C1EE405500016877C /* cmark.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E7FCBC1E9E4B4800773069 /* themes in Resources */,
-				45E7FCBE1E9E63F400773069 /* cmark-0.27.1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +292,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QLCommonMark/cmark",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalmoksha.QLCommonMark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
@@ -290,7 +310,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QLCommonMark/cmark",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalmoksha.QLCommonMark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;

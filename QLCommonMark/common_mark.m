@@ -8,32 +8,22 @@
 
 #include "shared.h"
 #include "common_mark.h"
+#include "cmark/cmark.h"
 
 // Uses the embedded `cmark` command line client
 //-----------------------------------------------------------------------------
 NSData *render_markdown_cmark(NSURL *url)
 {
-  NSString *path_to_cmark = [[NSBundle bundleWithIdentifier:kPluginBundleId] pathForResource:kCMark ofType:nil];
-
-  if (kLogDebug) {
-    NSLog(@"creating preview for file: %@", [url path]);
-    NSLog(@"Using processor:           %@", path_to_cmark);
-  }
+  if (kLogDebug) NSLog(@"creating preview for file: %@", [url path]);
   
-  NSPipe *pipe        = [NSPipe pipe];
-  NSFileHandle *file  = pipe.fileHandleForReading;
-  NSTask *task        = [[NSTask alloc] init];
-  task.launchPath     = [path_to_cmark stringByExpandingTildeInPath];
-  task.arguments      = @[url.path];
-  task.standardOutput = pipe;
-  [task launch];
-  
-  NSData *data = [file readDataToEndOfFile];
-  [file closeFile];
-
-  NSString *html      = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
   NSString *css_dir   = @"~/.cmqlstyle.css";
   NSString *css       = @"";
+  NSString *md        = [NSString stringWithContentsOfFile: url.path encoding: NSUTF8StringEncoding error: NULL];
+  char *html_c_string = cmark_markdown_to_html([md UTF8String], [md lengthOfBytesUsingEncoding:NSUTF8StringEncoding], CMARK_OPT_DEFAULT);
+  NSString *html      = [[NSString alloc] initWithUTF8String:html_c_string];
+  free(html_c_string);
+
+  if (kLogDebug) NSLog(@"Converted Data: %@", html);
 
   if ([[NSFileManager defaultManager] fileExistsAtPath:[css_dir stringByExpandingTildeInPath]])
   {
@@ -63,12 +53,11 @@ NSData *render_markdown_cmark(NSURL *url)
 
   }
   
-  html = [css stringByAppendingString:html];
   html = [NSString stringWithFormat: @"<!DOCTYPE html>\n"
                                       "<html>\n"
                                       "<head>\n"
                                       "  <meta charset=\"utf-8\">\n"
-                                      "  <style>\n%@</style>\n"
+                                      "  %@\n"
                                       "  <base href=\"%@\"/>\n"
                                       "</head>\n"
                                       "<body>\n"

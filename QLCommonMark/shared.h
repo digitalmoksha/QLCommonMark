@@ -19,6 +19,5 @@
 
 static NSString * const kPluginBundleId             = @"com.digitalmoksha.QLCommonMark";
 static BOOL const       kLogDebug                   = NO;
-static NSString * const kCMark                      = @"cmark-0.27.1";
 
 #endif /* shared_h */
