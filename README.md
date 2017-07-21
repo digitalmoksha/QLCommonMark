@@ -6,7 +6,7 @@
 
 ## Installation
 
-Copy `QLCommonMark.qlgenerator` to your `~/Library/QuickLook` or `/Library/QuickLook` folder.  If the plugin is not picked up immediately, you many need to run `qlmanage -r` from the Terminal.
+[Download `QLCommonMark.qlgenerator`](https://github.com/digitalmoksha/QLCommonMark/releases/download/v1.0/QLCommonMark.qlgenerator.zip) and copy it to your `~/Library/QuickLook` or `/Library/QuickLook` folder.  If the plugin is not picked up immediately, you may need to run `qlmanage -r` from the Terminal.
 
 ## Inspiration
 
